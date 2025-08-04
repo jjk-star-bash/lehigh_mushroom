@@ -31,10 +31,14 @@ This codebase serves as a test-follow platform for students participating in Leh
 	•	Python 3 installed
 	•	I2C enabled on the Pi (use sudo raspi-config)
 	•	Required libraries: smbus2, adafruit-circuitpython-bmp280
+ 	•	lcd repository clone
+
+## HOW-TO get dependencies: 
+
 ```bash
 pip install smbus2 adafruit-circuitpython-bmp280
 
-IF YOU GET AN ERROR ABOUT GLABAL INSTALL USING PIP, ACTIVATE A VIRTUAL ENVIRONEMNT AND USE PIP THERE!
+IF YOU GET AN ERROR AT THIS STEP ABOUT GLOBAL INSTALL USING PIP, ACTIVATE A VIRTUAL ENVIRONEMNT AND USE PIP THERE!
 HOW TO DO THIS:
 
 # Create the env.
@@ -43,20 +47,30 @@ python3 -m venv venv
 # Source it
 source venv/bin/activate
 
-# Install deps.
+# Continue To Install deps.
 pip install smbus2 adafruit-circuitpython-bmp280
+```
 
-# When done working exit the env
-deactivate
-
+```bash
+# Next clone the lcd repository (must do this)
+git clone https://github.com/the-raspberry-pi-guy/lcd.git
+cd lcd/
+sudo ./install.sh
+# pi will need to reboot
 ```
 ---
 
 ## Files:
 
 ### `raw-test.py`
-Reads sensor data from the AHT20 + BMP280 sensor.  
+Reads sensor data from the AHT20 + BMP280 sensor (THIS IS A TEST FILE, RAW DATA WILL BE FED TO TERMINAL).  
 - **Note**: This script bypasses standard sensor libraries and applies Bosch calibration adjustments.  
 - **Status**: Incomplete but functional.
+
+### `run-time.py`
+Reads Temp, Pres, Humidity from the AHT20 + BMP280 sensor and displays to the 16x20 lcd display until quit.  
+- **Note**: This script USES standard sensor libraries.  
+- **Status**: Functional.
+
 
 ---
