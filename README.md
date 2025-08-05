@@ -12,17 +12,30 @@ This codebase serves as a test-follow platform for students participating in Leh
 - **Email**: jjk226@lehigh.edu  
 
 ---
-## 📥 How to Pull This Repository
+## 💻 How to Use the Raspbery Pi
 
-1. Open a terminal on your Raspberry Pi (or any Linux machine).  
-2. Navigate to the folder where you want this code:  
+1. Insert the provided SD card ad power the Pi using a micro-usb cord.
+2. Give the Pi ~25 seconds to boot and connect to lehigh-guest
+3. Connect your computer to lehigh-guest to allow connection over this shared network
+4. Open Terminal (Mac) or PowerShell (Windows)
+5. Initiate a SSH tunnel connection
+6. TIP: ssh into the the pi using '''ssh pi@*NAME_OF_THE_KIT*''' and hitting enter
+7. The terminal will ask for the Pi's passowrd, which is on the kit
+8. Once inside, follow the remaining steps to: pull, source and run the project code/environments
+
+---
+## 📥 How to Pull This Repository and use it's code
+
+1. Navigate to the folder where you want this code:  
    ```bash
-   # Navigate to starage folder or make a new one using mkdir:
+   # Create and navigate to a storage folder for this project
+   mkdir projects
    cd ~/projects
-   # Clone the repository:
+   # Clone this repository to collect its code:
    git clone https://github.com/jjk-star-bash/lehigh_mushroom.git
    # Navigate to the cloned folder
    cd lehigh_mushroom
+   # if you see it, congrats you sucsesssfully pulled the repo
    ```
    ---
 
